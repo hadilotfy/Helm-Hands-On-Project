@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: jenkins
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv-jenkins
+  namespace: jenkins
+spec:
+  storageClassName: manualooo
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/home/docker/jenkins-home"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: claim-jenkins
+  namespace: jenkins
+spec:
+  storageClassName: manualooo
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

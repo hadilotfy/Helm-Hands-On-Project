@@ -1,0 +1,24 @@
+controller:
+  imagePullPolicy: IfNotPresent
+  serviceType: NodePort
+  resources.requests: 
+    cpu: "100m"
+    memory: "1Gi"
+  
+  #adminUser: hadi
+  #adminPassword: "0000"
+  # image: "jenkins/jenkins"
+  # tagLabel: "lts-jdk11"
+#persistence.enabled: false
+#   enabled: true
+#   existingClaim: claim-jenkins
+#   storageClass: manualooo
+#   size: "1Gi"
+#   volumes:
+#   - name: helm-lab-disk
+#   mounts:
+#   - name: helm-lab-disk
+#     mountPath: "{{ .Values.controller.jenkinsHome }}"
+# agent:
+#   image: "hadilotfy/jenkins-ubuntu-slave"
+#   tag: "v1"
